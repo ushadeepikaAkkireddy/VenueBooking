@@ -1,0 +1,30 @@
+﻿@model IEnumerable<VenueBookingCore.Models.Venue>
+<h2>
+   Venue List
+</h2>
+<table class="table table-bordered">
+    <th>VenueId</th>
+    <th>
+        EventName
+
+    </th>
+    <th>VenueName</th>
+    <th>Price</th>
+    <th>Address</th>
+   
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.VenueId</td>
+                <td>@v.EventName</td>
+                <td>@v.VenueName</td>
+                <td>@v.Price</td>
+                   <td>@v.Address</td>               
+                <td><a asp-action="Edit" asp-controller="Venue" asp-route-id="@v.VenueId">Edit</a></td>
+                <td><a asp-action="Delete" asp-controller="Venue" asp-route-id="@v.VenueId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

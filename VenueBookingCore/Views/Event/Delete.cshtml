@@ -1,0 +1,10 @@
+﻿@model VenueBookingCore.Models.Event
+
+    <form asp-action="Delete" method="post">
+    <input asp-for="EventId" readonly="true" />
+    <input asp-for="EventName" readonly="true" />
+    <input asp-for="Details" readonly="true" />
+ 
+
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>

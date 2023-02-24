@@ -1,0 +1,27 @@
+﻿@model IEnumerable<VenueBookingCore.Models.Event>
+<h2>
+    Event List
+</h2>
+<table class="table table-bordered">
+    <th>Id</th>
+    <th>
+        EventName
+
+    </th>
+    <th>Details</th>
+   
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.EventId</td>
+                <td>@e.EventName</td>
+                <td>@e.Details</td>
+               
+                <td><a asp-action="Edit" asp-controller="Event" asp-route-id="@e.EventId">Edit</a></td>
+                <td><a asp-action="Delete" asp-controller="Event" asp-route-id="@e.EventId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
